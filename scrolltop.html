@@ -1,0 +1,113 @@
+<!--3. scrolltop - creating a top scrolling using jquery-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin:0;
+                padding:0;
+            }
+            div {
+                width:200px;
+            }
+            #uparrow {
+                height:50px;
+                width:50px;
+                border: 1px solid red;
+                border-radius: 50%;
+                position:fixed;
+                bottom:150px;
+                right:60px;
+                font-size: 20px;
+                background-color: orange;
+                cursor: pointer;
+                display:none;
+            }
+            .maindiv
+            {
+                display: none;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                position: fixed;
+                opacity: .2;
+            }
+            .logindiv
+            {
+                text-align: center;
+                display: none;
+                height: 30%;
+                width: 40%;
+                background-color: white;
+                position: fixed;
+                border-radius: 20px;
+                padding: 40px;
+            }
+        </style>
+    </head>
+    <body>
+<!--        <div style="border: 1px solid red;">
+            <p>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo<br/>This is demo</p>
+        </div>-->
+
+        <!--<button>Get Width</button>--> 
+        <button id="uparrow">Up</button>
+
+
+        <!--a-->
+        <div class="maindiv"> i am in main div </div>
+        <div class="logindiv">
+            <h3> Login Here </h3>
+            <input type="text" placeholder="Enter Email" /> <br> <br>
+            <input type="password" placeholder="Enter password" /> <br> <br>
+            <input type="submit" value="Login" />
+        </div>
+        <button id="button1"> Login </button>
+
+
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js" ></script>
+        <script>
+//            $(document).ready(function(){
+//                $("button").click(function(){
+//                    var a = $("div").scrollTop();   //getting the current scrolling position
+//                    alert(a+" px");                 //printing the position in pixel
+//                });
+//            })
+
+            //displaying up arrow according to the pixels, like when the scroll reaches bottom
+            var amount_scrolled = 600;
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > amount_scrolled) {
+                    $("#uparrow").fadeIn(500);
+                } else {
+                    $("#uparrow").fadeOut(500);
+                }
+            });
+
+            $(document).ready(function () {
+                $("#uparrow").click(function () {
+                    $("body").animate({
+                        scrollTop: 0
+                    });
+                })
+            })
+            
+            //creating a modal login page
+            $(document).ready(function (){
+                $("button").click(function (){
+                    $(".maindiv").show();
+                    $(".logindiv").show().animate({
+                        left: '500px',
+                        top : '250px'
+                    });
+                });
+                $(".maindiv").click(function (){
+                    $(".maindiv").hide();
+                    $(".logindiv").hide();
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+        <!--2. second html page using jquert-3.6.4.js for coding-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .div1 {
+                height: 100px;
+                width: 200px;
+                background-color: red;
+                position:relative;
+            }
+            .div2 {
+                height: 300px;
+                width: 300px;
+                background-color: green;
+                display:none;
+            }
+            .div3 {
+                display:inline-block;
+            }
+            .div4 {
+                height: 100px;
+                width: 100px;
+                background-color: black;
+            }
+            .div5{
+                height: 100px;
+                width: 100px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <!--4. Other Effect - animate(), delay() etc-->
+        <button id="button1">Click Me</button>
+        <div class="div1">
+            This is my div
+        </div>
+        
+        <!--delay()-->
+        <button id="button2">Delay Button</button>
+        <div class="div2">
+            This is to show the delay function
+        </div>
+        
+        <!--html() - the html() method sets or returns the content(innerHTML) of the selected elements.-->
+        <button id="button3">Changing the div</button>
+        <div class="div3">
+            This is to show the delay function
+        </div>
+        
+        <!--attr() - setting the attribute to the a tag-->
+        <button id ="button4">Click Me</button>
+        <a id="alink1"> Google </a>
+        
+        <!--html() - getting the values from the element this time-->
+        <button id ="button5">Copy Text</button>
+        <a id="alink2"> I would like to copy this text </a>
+        
+        <!--val() - getting the values from the element this time - like input field-->
+        <button id ="button6">Copy From the Input</button>
+        <input type="text" placeholder="Enter your name here" id="name1"/>
+        
+        <!--append() - the append method inserts specified content at the end of the seleted elements.-->
+        <button id="button7">Add</button>
+        <input type="text" placeholder="Enter the course here to add" id="course1" name="courses1"/>
+        <ol>
+            <li>Java Programming</li>
+            <li>Python Programming</li>
+            <li>MySQL Programming</li>
+        </ol>
+        
+        <!--addClass() - adding class to the div at the runtime-->
+        <button id="button8">Add Class</button>
+        <div id="div4">
+            This is demo 
+        </div>
+        
+        <!--removeClass() - removing class to the div at the runtime-->
+        <button id="button9">Remove  Class</button>
+        <div id="div5" class="div5">
+            This is demo, going to remove class 
+        </div>
+
+
+        
+        
+<!---------------------Javascript coding starts from here------------------->
+        
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js" ></script>
+        <script>
+            //4. Other Effect - animate(), delay() etc
+            $(document).ready(function(){
+                $("#button1").click(function(){
+                    $(".div1").animate({left: '400px', height: '200px', width: '200px'});
+                })
+                
+                //delay()
+                $("#button2").click(function(){
+                     $(".div2").delay().fadeToggle();  //you can use any method after delay method to delay
+                })
+                
+                //html() - the html() method sets or returns the content(innerHTML) of the selected elements.
+                //setting the value 
+                $("#button3").click(function(){
+                    $(".div3").html("Here is the key");  //setting the value to the div
+                })
+                
+                //attr- the attr() method sets or returns attributes and values of the selected elements.
+                $("#button4").click(function(){
+                    $("#alink1").attr({
+                        "href":"https://www.google.com/",
+                        "title": "Click me to open google"
+                    });
+                })
+                
+                //html() - getting the values from the element this time
+                $("#button5").click(function(){
+                    var a = $("#alink2").html();
+                    alert(a);
+                })
+                
+                //val() - getting the values from the element this time - like input field
+                //Note: the val() method is mostly used with the HTML form elements
+                $("#button6").click(function(){
+                    var a = $("#name1").val();
+                    alert(a);
+                })
+                
+                //append() - the append method inserts specified content at the end of the seleted elements.
+                $("#button7").click(function() {
+                    var a = $("#course1").val();
+                    $("ol").append("<li> "+a+" </li>")
+                });
+                
+                //addClass() - adding class to the div at the runtime
+                $("#button8").click(function(){
+                    $("#div4").addClass("div4");
+                })
+                
+                //removeClass() - removing class to the div at the runtime
+                $("#button9").click(function(){
+                    $("#div5").removeClass("div5");
+                })
+            });
+        </script>
+    </body>
+</html>

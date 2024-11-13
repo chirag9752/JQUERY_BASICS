@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <!--4. 4th html page for slider using jquery-->
+    
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin:0;
+                padding: 0;
+            }
+            .main {
+                height:100%;
+                width:100%;
+                background-color:black;
+                display:none;
+                opacity: 0.2;
+                position:absolute; 
+            }
+            .img_div {
+                height:500px;
+                width:1000px;
+                display:none;
+                position:absolute;
+                /*background-color: orange;*/
+                margin: 220px 0px 30px 450px;
+                text-align: center;
+ 
+            }
+            .gallery_img {
+                cursor: pointer;
+            }
+            #img_design {
+                max-width:1000px;
+                max-height:500px;
+            }
+            #leftarrow, #rightarrow {
+                font-size: 30px;
+                color:white;
+                background-color:black;
+                border:1px solid white;
+                width:30px;
+                height: 30px;
+                border-radius: 50%;
+                line-height: 30px;
+                padding:5px 5px;    
+                cursor:pointer;
+                position:absolute;
+            }
+            #leftarrow {
+                left:260px;
+                top:220px;
+            }
+            #rightarrow {
+                right:260px;
+                top:220px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="main">main div</div>
+        <div class="img_div" id="show_img">
+        <img id="img_design"/>
+        <i id="leftarrow">&#8610;</i><i id="rightarrow">&#8611;</i>
+        </div>
+        <img src="../images/aa.jpg" width="200" class="gallery_img" id="1"/>
+        <img src="../images/aa.png" width="200" class="gallery_img" id="2"/>
+        <img src="../images/notes4.png" width="200" class="gallery_img" id="3"/>
+        <img src="../images/intro.jpg" width="200" class="gallery_img" id="4"/>
+        
+<!-----------------------HTML body coding ends here---------------------------->
+        
+        
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js"></script>
+        <script src="../JQUERY-PAGES/fourthjquery.js"></script>
+    </body>
+</html>

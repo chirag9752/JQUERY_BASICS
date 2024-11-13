@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--5. 5th HTML page, creating image slider using jquery-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin:0;
+                padding:0;
+            }
+            #slider_main_div {
+                height: 310px;
+                width:900px;
+                background-color: yellow;
+                margin-top:100px;
+                margin-left: 450px;
+                text-align: center;
+                position:relative;
+            }
+            #slider_img_div {
+
+                height:300px;
+                width:900px;
+                background-color: red;
+                border:5px solid red;
+                overflow: hidden;
+            }
+            #prev {
+                height:50px;
+                width:50px;
+                border-radius: 50%;
+                background-color: green;
+                line-height: 50px;
+                position:absolute;
+                top:125px;
+                cursor: pointer;
+                z-index: 10;
+                left:10px;
+                opacity: 0.4;
+                font-weight: bold;
+            }
+            #next {
+                height:50px;
+                width:50px;
+                border-radius: 50%;
+                background-color: green;
+                line-height: 50px;
+                position:absolute;
+                z-index: 10;
+                cursor: pointer;
+                right:10px;
+                top:125px;
+                font-weight: bold;
+                opacity: 0.4;
+            }
+            #slider_main_div:hover #prev,#slider_main_div:hover #next {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="slider_main_div">
+
+            <div id="slider_img_div">
+                <img src="../images/11.jpg" />
+                <img src="../images/22.jpg" />
+                <img src="../images/33.jpg" />
+            </div>
+            
+            <div id="prev"> << </div>
+            <div id="next"> >> </div>
+            
+        </div>
+
+
+
+        <!-----------------------HTML body coding ends here---------------------------->
+
+
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js"></script>
+        <script src="../JQUERY-PAGES/slidercycle.js"></script>
+        <script>
+            $(document).ready(function () {
+//              $("#slider_img_div").cycle();   //using jquery instead of js this time to create an image slider
+
+                $("#slider_img_div").cycle({
+                    fx: 'zoom',
+                    sync: false,
+                    delay: -2000,           //jquery.malsup.com/cycle/begin/html
+                    next: '#next',
+                    prev: '#prev'
+                });
+            });
+
+
+
+        </script>
+    </div>
+</body>
+</html>

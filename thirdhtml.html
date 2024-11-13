@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+            <!--3. 3rd html page for gallery-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin:0;
+                padding: 0;
+            }
+            .main {
+                height:100%;
+                width:100%;
+                background-color:black;
+                display:none;
+                opacity: 0.2;
+                position:absolute; 
+            }
+            .img_div {
+                height:500px;
+                width:1000px;
+                display:none;
+                position:absolute;
+                /*background-color: orange;*/
+                margin: 220px 0px 30px 450px;
+                /*border:1px solid red;*/
+                text-align: center;
+ 
+            }
+            .gallery_img {
+                cursor: pointer;
+            }
+            #img_design {
+                width:500px;
+                height:auto;
+                border:1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="main">main div</div>
+        <div class="img_div" id="show_img">
+        <img id="img_design"/>
+        </div>
+        <img src="../images/aa.jpg" width="200" class="gallery_img"/>
+        <img src="../images/aa.png" width="200" class="gallery_img"/>
+        <img src="../images/notes4.png" width="200" class="gallery_img"/>
+        <img src="../images/intro.jpg" width="200" class="gallery_img"/>
+        
+        
+<!---------------------------html body code ends here-------------------------->
+        
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js"></script>
+        <script>
+            $(document).ready(function() {
+                //showing big front pic div by clicking on the small pics
+                $(".gallery_img").click(function(){
+                    $(".main, .img_div").show();
+                        var img_src=$(this).attr("src");
+                        $("#img_design").attr("src", img_src);
+                })
+                //hiding the big picture div and the main div
+                $(".main").click(function(){
+                    $(".main, .img_div").hide();
+                });
+            });
+        </script>
+    </body>
+</html>

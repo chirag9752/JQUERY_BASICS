@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+    <!--1. first html page using jquery-3.6.4.js for coding-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .divstyle {
+                height:100px;
+                width:100px;
+                background-color: red;
+                margin-top:50px;
+            }
+            #div-1 {
+                height:100px;
+                width:200px;
+                background-color: yellow;
+                margin-top:50px;
+            }
+            .div-2 {
+                height:100px;
+                width:100%;
+                background-color: green;
+                margin-top:70px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--'#btn-1' - working  //"#btn-1" - working as well-->
+        <button id="btn-1">Click Me</button>
+        
+        <!--you can target tag as well like this--> 
+        <p>This is my first jquery demo</p>
+        <button>Click Me</button>
+        
+        <!--using this keyword-->
+        <div class="divstyle">
+            div 1
+        </div>
+        <div class="divstyle">
+            div 2
+        </div>
+        
+        <!--another example of this keyword, targeting multiple elements-->
+        <!--hiding h1, h2 and h3-->
+        <h1>This is h1 tag</h1>
+        <h2>This is h2 tag</h2>
+        <h3>This is h3 tag</h3>
+        
+        <!--creating two buttons hide and show to hide the element-->
+        <p id="para1">This is para demo</p>
+        <button id="hide">Hide</button>
+        <button id="show">Show</button>
+        <button id="toggle">Toggle</button>
+        
+        <!--2. Fading Effect - fadeIn(), fadeOut(), fadeToggle(), fadeTo()-->
+        <div id="div-1">This is div 1</div>
+        <button id="fadeout">Fade Out</button>
+        <button id="fadein">Fade In</button>
+        <button id="fadetoggle">Fade Toggle</button>
+        <button id="fadeto">Fade To</button>
+        
+        <!--3. Sliding Effect - slideDown(), slideUp(), slideToggle()-->
+        <div class="div-2"></div>
+        <button id="slideup">Slide Up</button>
+        <button id="slidedown">Slide Down</button>
+        <button id="slidetoggle">Slide Toggle</button>
+        
+        
+        
+        <script src="../JQUERY-PAGES/jquery-3.6.4.js" ></script>
+        <script>
+            //it means we will not perform any action until the html page is ready
+            $(document).ready(function(){
+//                Mouse Events - click()
+                $('#btn-1').click(function(){                 //'#btn-1' - working  //"#btn-1" - working as well
+                    alert("Btn is working");
+                })
+                
+                //you can target tag as well like this   
+                 $("button").click(function(){
+                    $("p").html("Para changed");             //changing para by clicking on the button
+                    $("p").css("font-size", "40px");        //changing font size using css method
+                    $("p").css("color", "blue");           //changing the color to blue as well
+                })
+                
+                //using this keyword    //targeting multiple elements in this case
+                //this is targeting both the elements
+                $("div, div").click(function(){
+                    $(this).hide();
+                })
+                
+                //another example of this keyword, targeting multiple elements
+                //hiding h1, h2 and h3
+                $("h1, h2, h3").click(function(){
+                    $(this).hide();
+                })
+                
+                //1. Display Effect - hide(), show(), toggle()
+                //creating two buttons hide and show to hide the element
+                $("#hide").click(function(){
+                    $("#para1").hide();
+                })
+                
+                $("#show").click(function(){
+                    $("#para1").show();
+                })
+                
+                //toggle the element, hide on one click and show on another
+                $("#toggle").click(function(){
+                    $("#para1").toggle();
+                })
+                
+                
+                //2. Fading Effect - fadeIn(), fadeOut(), fadeToggle(), fadeTo()
+                $("#fadeout").click(function(){
+                    $("#div-1").fadeOut()        //fadeOut("slow") //fadeOut(3000) - 3 secs
+                })
+                
+                //fadeIn
+                $("#fadein").click(function(){
+                    $("#div-1").fadeIn()        //fadeIn("slow") //fadeIn(3000) - 3 sec
+                })
+                
+                //FadeToggle
+                $("#fadetoggle").click(function(){
+                    $("#div-1").fadeToggle(3000)
+                })
+                
+                //FadeTo
+                $("#fadeto").click(function(){
+                    $("#div-1").fadeTo("slow", 0.3)     //fadeTo(speed, opacity)
+                })
+                
+                
+                //3. Sliding Effect - slideDown(), slideUp(), slideToggle()
+                $("#slideup").click(function(){
+                    $(".div-2").slideUp()            //slideUp("slow") //slideUp(3000) - 3 sec
+                })
+                
+                //slideDown
+                $("#slidedown").click(function(){
+                    $(".div-2").slideDown()         //slideDown("slow") //slideDown(3000) - 3 sec
+                })
+                
+                //slideToggle
+                $("#slidetoggle").click(function(){
+                    $(".div-2").slideToggle()      //slideToggle("slow") //slideToggle(3000) - 3 sec
+                })
+            });
+        </script>
+    </body>
+</html>
